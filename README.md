@@ -1,30 +1,39 @@
 # Saloon_frontend
 # Saloon Booking Management System
 
-Welcome to the Saloon Booking Management System project repository. This web application is designed to streamline and enhance the management of salon bookings.
+Welcome to the Saloon Booking Management System - a web application that simplifies the process of booking salon appointments for customers and streamlines salon management for administrators.
 
 ## Project Overview
+This project features two essential roles:
 
-Our software team has developed a web application using React.js for the frontend and Laravel for the backend. The system is built to provide a more efficient and automated way of managing salon bookings, replacing the manual processes that can be time-consuming and error-prone.
+- **Customer:** The customer dashboard allows clients to browse available services, schedule appointments, and manage their bookings.
 
-## User Roles
+- **Admin:** The admin dashboard empowers salon administrators to handle service management, appointment scheduling, and more.
 
-The system supports two main user roles, each with specific permissions and access levels. Users are granted access to different parts of the system based on their roles.
+This project is the collaborative effort of multiple talented contributors:
 
-- **Customer**: Customers can access the customer dashboard, allowing them to book appointments and manage their bookings.
+- [Madushka](https://github.com/madushkavi) (Admin Dashboard)
+- [Jayani Udara](https://github.com/JayaniUdara) (Customer Dashboard)
+- [Chanuka](https://github.com/chanuka98) (Contributor)
 
-- **Admin**: Admins have access to the admin dashboard, which includes features for managing salon services, appointments. The admin dashboard was expertly coded by [@Madushkavi](https://github.com/madushkavi).
+## Features
+- **User-Friendly Interface:** The intuitive user interface makes it easy for customers to find and book their preferred services.
+- **Admin Control:** Admins have access to a feature-rich dashboard, offering service management, appointment scheduling, and other administrative tasks.
+- **Efficient Booking:** Customers can view available time slots and select their preferred one for an appointment.
+- **Role-Based Authentication:** Ensure secure access with role-based authentication for customers and administrators.
+- **Collaborative Development:** A collaborative project with different contributors focusing on separate components, ensuring a robust and feature-rich system.
 
-## Contributors
+## Getting Started
+To get started with this project, the backend repository [Saloon_backend](https://github.com/madushkavi/Saloon_backend).
 
-We want to acknowledge the valuable contributions of our team members who have made this project possible:
+### Customer Dashboard
+For customer-specific features and functionalities, explore the customer dashboard developed by[Udara](https://github.com/JayaniUdara).
 
-- [@Madushkavi](https://github.com/madushkavi): Madushkavi played a significant role in developing the admin dashboard's frontend and backend.
+### Admin Dashboard
+For admin-specific features and functionalities, explore the admin dashboard developed by [Madushka](https://github.com/madushkavi).
 
-- [Chanuka](https://github.com/chanuka): Chanuka contributed to the development of the login and signup features, including their backend implementation.
 
-Feel free to explore their profiles and show your appreciation for their work.
-
-Thank you for your interest and support!
+## Thank You!
+Thank you for your interest and support. We hope the Saloon Booking Management System brings convenience and efficiency to both customers and administrators.
 
 Happy booking!
