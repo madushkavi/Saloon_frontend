@@ -24,10 +24,10 @@ This project is the collaborative effort of multiple talented contributors:
 - **Collaborative Development:** A collaborative project with different contributors focusing on separate components, ensuring a robust and feature-rich system.
 
 ## Getting Started
-To get started with this project, follow the instructions in the backend repository [Saloon_backend](https://github.com/madushkavi/Saloon_backend).
+To get started with this project,the backend repository [Saloon_backend](https://github.com/madushkavi/Saloon_backend).
 
 ### Customer Dashboard
-For customer-specific functionalities, refer to the [Customer Dashboard Repository](https://github.com/JayaniUdara).
+For customer-specific features and functionalities, explore the customer dashboard developed by[Udara](https://github.com/JayaniUdara).
 
 ### Admin Dashboard
 For admin-specific features and functionalities, explore the admin dashboard developed by [Madushka](https://github.com/madushkavi).
