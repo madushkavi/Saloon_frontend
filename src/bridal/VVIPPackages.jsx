@@ -1,66 +1,52 @@
-import React from "react";
-import "../styles/Bridal.css"; // Create a new CSS file for Bronze page if needed
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "../styles/Bridal.css"; 
 
-const VVIP = () => {
+const VVIPPackages = () => {
+  const [services, setServices] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/servicesview")
+      .then((response) => {
+        setServices(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setIsLoading(false);
+      });
+  }, []);
+
+  const vvippServices = services.filter((service) => {
+    const secondWord = service.serviceType.split(' ')[1];
+    return secondWord === 'VVIP';
+  });
+
   return (
     <div className="bridal-container">
       <h1>VVIP Package</h1>
       <div className="bridal-items">
-        <div className="bridal-item">
-          <h2>Bridal Makeup - Manavari & Koori</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Jewel Set - 2</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Net - 2</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Facial-2</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Mehendi</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Natural Head Dress</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Natural Bouquet</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Predicure-HIFI</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Manicure-HIFI</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Mehendi Makeup</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Guest Makeup-2</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Brides Maids-2</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Flower Girls-2</h2>
-          <p></p>
-        </div>
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>Error: {error.message}</div>
+        ) : (
+          <div>
+            
+              {vvippServices.map((service) => (
+                <div className="bridal-item" key={service.id}>
+                  {service.serviceName}
+                </div>
+              ))}
+           
+          </div>
+        )}
       </div>
     </div>
   );
-};
+}
 
-export default VVIP;
+export default VVIPPackages;

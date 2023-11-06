@@ -1,48 +1,69 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Threading.css";
+import axios from "axios";
 import bride from "../assets/bride.jpg";
 
 const removeSpaces = (str) => {
   return str.replace(/\s+/g, '');
 };
 
-const bridalservices = [
-  { service: "Bronze", price: "Rs.60,000" },
-  { service: "Silver", price: "Rs.75,000" },
-  { service: "Gold", price: "Rs.100,000" },
-  { service: "Diamond", price: "Rs.125,000" },
-  { service: "Platinum", price: "Rs.150,000" },
-  { service: "VIP Packages", price: "Rs.200,000" },
-  { service: "VVIP Packages", price: "Rs.250,000" },
-];
-
 const BridalPackages = () => {
+    const [services, setServices] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+  
+    useEffect(() => {
+      axios
+        .get("http://127.0.0.1:8000/api/servicesview")
+        .then((response) => {
+          setServices(response.data);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setError(error);
+          setIsLoading(false);
+        });
+    }, []);
+  
+    const bridalServices = services.filter((service) => {
+      const firstWord = service.serviceType.split(' ')[0];
+      return firstWord === 'bridal';
+    });
+    
   return (
     <div>
       <div className="container" style={{ backgroundImage: `url(${bride})` }}>
         <h1>Bridal Services</h1>
       </div>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : error ? (
+        <div>Error: {error.message}</div>
+      ) : (
+        <div>
       <table>
         <thead>
           <tr>
-            <th>Service</th>
+            <th>Service Name</th>
             <th>Price</th>
           </tr>
         </thead>
         <tbody>
-          {bridalservices.map((item, index) => (
-            <tr key={index}>
+          {bridalServices.map((service) => (
+            <tr key={service.id}>
               <td>
-                <Link to={`/${removeSpaces(item.service)}`}>
-                  {item.service}
+                <Link to={`/${removeSpaces(service.serviceType.split(' ')[1])}`}>
+                {service.serviceType.split(' ')[1]}
                 </Link>
               </td>
-              <td>{item.price}</td>
+              <td>{service.price}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import axios from "axios";
 import "../styles/Threading.css";
 import o3 from "../assets/o3.jpg";
