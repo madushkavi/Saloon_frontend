@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import AdminSidebar from "../AdminSidebar";
 import { useNavigate } from "react-router-dom";
 import "../../styles/adminmain.css";
-import img from "../../assets/bg_2.png";
+
 import { Logout } from "@mui/icons-material";
 
 import axios from "axios";
 
 const AdService = () => {
   const [showServiceTable, setShowServiceTable] = useState(false);
-  
+  const [adminName, setAdminName] = useState('');
+
   const [services, setServices] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -80,6 +81,15 @@ const [isEditMode, setIsEditMode] = useState(false);
   };
 
   useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/adminview") 
+      .then((response) => {
+        setAdminName(response.data.name);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
     axios
       .get("http://127.0.0.1:8000/api/servicesview")
       .then((response) => {
@@ -284,14 +294,11 @@ const [isEditMode, setIsEditMode] = useState(false);
           </form>
         )}
       </div>
-      <div className="rightside">
-        <div className="admin-image">
-          <img
-            src={img}
-            alt="Admin"
-            style={{ width: "4.5rem", height: "4.5rem" }}
-          />
+       <div className="rightside">
+        <div className="text">
+           {adminName}
         </div>
+        Welcome.!!
         <div className="motivational-sentence">
           <p>Stay motivated and keep serving your clients!</p>
         </div>

@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import AdminSidebar from "../AdminSidebar";
 import { useNavigate } from "react-router-dom";
 import "../../styles/adminmain.css";
-import img from "../../assets/bg_2.png";
+import axios from "axios";
 import { Logout } from "@mui/icons-material";
 
 export default function CustomerDetail() {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
+  const [adminName, setAdminName] = useState('');
+
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -16,7 +18,33 @@ export default function CustomerDetail() {
     alert('Are you sure you want to logout?');
   };
 
+  const removeCustomer = (customerId) => {
+    if (window.confirm("Are you sure you want to remove this customer?")) {
+      fetch(`http://127.0.0.1:8000/api/users/${customerId}`, {
+        method: "DELETE",
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          // Remove the deleted customer from the data state
+          setData((prevData) => prevData.filter((item) => item.id !== customerId));
+        })
+        .catch((err) => {
+          setError(err);
+        });
+    }
+  };
+
   useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/adminview") 
+      .then((response) => {
+        setAdminName(response.data.name);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 
     fetch("http://127.0.0.1:8000/api/users")
       .then((response) => {
@@ -53,6 +81,7 @@ export default function CustomerDetail() {
                 <th>Phone Number</th>
                 <th>Email</th>
                 <th>Sex</th>
+                <th>Remove Customer</th>
               </tr>
             </thead>
             <tbody>
@@ -62,6 +91,11 @@ export default function CustomerDetail() {
                   <td>{item.phone}</td>
                   <td>{item.email}</td>
                   <td>{item.sex}</td>
+                  <td>
+                    <button className="warn" onClick={() => removeCustomer(item.id)}>
+                      Remove Customer
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -69,14 +103,11 @@ export default function CustomerDetail() {
         )}
       </div>
 
-      <div className="rightside">
-        <div className="admin-image">
-          <img
-            src={img}
-            alt="Admin"
-            style={{ width: "4.5rem", height: "4.5rem" }}
-          />
+       <div className="rightside">
+        <div className="text">
+           {adminName}
         </div>
+        Welcome.!!
         <div className="motivational-sentence">
           <p>Stay motivated and keep serving your clients!</p>
         </div>
