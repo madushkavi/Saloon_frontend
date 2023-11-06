@@ -1,0 +1,140 @@
+ .main {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.leftside {
+  flex: 0.6;
+  background-color: var(--black);
+  color: aliceblue;
+  padding: 10px;
+}
+
+.middle {
+  flex: 2;
+  background-color: #f0f0f0;
+  padding: 20px;
+  position: relative; 
+}
+
+.edit {
+  position: absolute;
+  top: 8px; 
+  right: 10px; 
+}
+.form button,
+.edit button {
+  background-color: black;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.form{
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+}
+
+
+.warn:hover {
+  background-color: rgb(207, 40, 40); 
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #343131;
+}
+
+th, td {
+  padding: 4px;
+  text-align: left;
+}
+
+thead {
+  background-color: #333;
+  color: rgb(121, 116, 116);
+}
+
+.edit button:hover {
+  background-color: rgb(84, 81, 81); 
+}
+
+.middle form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input_take {
+  margin-bottom: 20px;
+}
+
+.input_take label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input_take input[type="text"],
+.input_take input[type="number"],
+.input_take input[type="file"],
+.input_take select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.rightside {
+  flex: 0.5;
+  background-color: var(--black);
+  color: rgb(136, 171, 200);
+  padding: 10px;
+}
+
+.logout,
+.password-reset {
+  background-color: rgb(171, 64, 66);
+  color: white;
+  width: 8rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.logout:hover {
+  background-color: darkred;
+}
+
+.password-reset:hover {
+  background-color: rgb(61, 53, 107);
+}
+
+.calendar{
+  background-color: rgb(211, 210, 217);
+
+}
+.calendar button{
+  background-color: rgb(56, 56, 63);
+  font-size:x-small;
+  height: 70px;
+}
+.calendar button:hover{
+  background-color: rgb(133, 133, 136);
+  
+}
+.space {
+  margin-right: 10px; 
+}

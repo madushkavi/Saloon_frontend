@@ -1,0 +1,55 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 1.5rem;
+  transition: all 300ms ease;
+
+  height: 100vh;
+  
+  width: 255px;
+  background-color: var(--black);
+  border-bottom-right-radius: 0.7rem;
+  
+  
+}
+
+
+.menuIteam {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 3.5rem;
+  margin-left: 2.5rem;
+  position: relative;
+  transition: all 300ms ease;
+  font-size: 15px;
+  border-radius: 0.7rem;
+  color: rgb(223, 231, 239);
+  
+
+  .menuIteam:last-child {
+    
+    bottom: 3.3rem;
+    gap: 4rem;
+    width: 100%;
+    position: absolute;
+  }
+}
+.menuIteam:hover {
+  cursor: pointer;
+}
+.active {
+  background: var(--activeIteam);
+  margin-left: 0;
+  background-color: rgb(129, 108, 109);
+  color: var(--gray);
+}
+.active::before {
+  content: "";
+  width: 8px;
+  height: 100%;
+
+  background: var(--black);
+  margin-right: calc(1rem-8px);
+}

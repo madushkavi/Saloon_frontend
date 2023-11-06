@@ -1,0 +1,76 @@
+.menu {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.menuTop{
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  background-image:url(../assets/serviceback.jpg);
+  background-position: center;
+  background-size: cover;
+
+}
+.menu .menuTitle {
+  font-family: cursive;
+  font-size: 60px;
+  color:royalblue;
+ 
+}
+
+.menuList {
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+}
+
+/* MENU ITEM STYLING */
+
+.menuItem {
+  border-radius: 10px;
+  width: 350px;
+  height: 350px;
+  margin: 20px;
+  left:0;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+.menuItem:hover {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.menuItem div {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menuItem h1,
+.menuItem p {
+  margin-left: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+  .menuList {
+    grid-template-columns: 2fr 2fr;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .menuList {
+    grid-template-columns: 5fr;
+  }
+}

@@ -1,0 +1,35 @@
+
+.bridal-container {
+    max-width: 1350px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-image: url("../assets/3.jpg");
+  }
+  .bridal-container h1{
+    font-size: 50px;
+  }
+  .bridal-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .bridal-item {
+    width: 300px;
+    margin: 20px;
+    padding: 10px;
+    background-color:gray;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bridal-item h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .bridal-item p {
+    font-size: 16px;
+  }
+  
