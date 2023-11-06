@@ -44,10 +44,12 @@ function Footer() {
         </div>
       </div>
       <div className="footer_right">
-        
-        {count < targetCount ? count : `${targetCount}% `}
-        
-        Satisfied customers
+        <div className="info_first">
+          {count < targetCount ? count : `${targetCount}% `}
+        </div>
+        <div className="info_second">
+          Satisfied customers
+        </div>
       </div>
 
       <div className="socialMedia">
