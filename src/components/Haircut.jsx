@@ -27,7 +27,7 @@ const Haircut = () => {
 
   return (
     <div>
-      <div className="container" style={{ backgroundImage: `url(${Loreal})` }}>
+      <div className="containerrr" style={{ backgroundImage: `url(${Loreal})` }}>
         <h1>Haircut Services</h1>
       </div>
 
