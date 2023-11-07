@@ -4,10 +4,10 @@ import "../styles/Profile.css";
 
 const Profile = () => {
   const [userInfo, setUserInfo] = useState({
-    name: 'John Doe',
-    address: '123 Main St',
-    phoneNumber: '555-555-5555',
-    email: 'john.doe@example.com'
+    name: 'rivi kavindya',
+    address: '123 Main Street',
+    phoneNumber: '0716513618',
+    email: 'rivi.doe@example.com'
   });
 
   const [isEditing, setIsEditing] = useState(false);

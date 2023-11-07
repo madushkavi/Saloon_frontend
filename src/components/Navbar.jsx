@@ -7,7 +7,7 @@ import "../styles/Navbar.css";
 
 function Navbar() {
   const [openLinks,setOpenLinks]=useState(false);
-  const [action] = useState(false);
+  
 
   const toggleNavbar=()=> {
     setOpenLinks(!openLinks);
@@ -36,9 +36,8 @@ function Navbar() {
         <Link to="/about"> About </Link>
         <Link to="/services"> Services </Link>
         <Link to="/contact"> Contact </Link>
-        {action === false ? null : (
         <Link to="/profile">Profile</Link>
-        )}
+        
         <Link to="/admin"> Admin </Link>
         <Link to="/loginsignup"> Login / Signup </Link>
         <button onClick={toggleNavbar}>
