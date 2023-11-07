@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
+import LoginSignup from "./pages/LoginSignup";
 import Contact from "./pages/Contact";
 import AppoinmentForm from "./pages/AppoinmentForm";
 import Haircut from "./components/Haircut";
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/about"  element={<About/>}></Route>
           <Route exact path="/services"  element={<Services/>}></Route>
           <Route exact path="/contact"  element={<Contact/>}></Route>
+          <Route exact path="/loginsignup"  element={<LoginSignup/>}></Route>
           <Route exact path="/appointment" element={<AppoinmentForm/>}></Route>
           <Route exact path="/haircut"  element={<Haircut/>}></Route>
           <Route exact path="/threading"  element={<Threading/>}></Route>

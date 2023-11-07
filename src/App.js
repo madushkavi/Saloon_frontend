@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import LogIn from "./pages/LogIn";
+import LoginSignup from "./pages/LoginSignup";
 import AppoinmentForm from "./pages/AppoinmentForm";
 import Haircut from "./components/Haircut";
 import Threading from "./components/Threading";
@@ -46,7 +46,7 @@ function App() {
           <Route exact path="/about"  element={<About/>}></Route>
           <Route exact path="/services"  element={<Services/>}></Route>
           <Route exact path="/contact"  element={<Contact/>}></Route>
-          <Route exact path="/login"  element={<LogIn/>}></Route>
+          <Route exact path="/loginsignup"  element={<LoginSignup/>}></Route>
           <Route exact path="/appointment" element={<AppoinmentForm/>}></Route>
           <Route exact path="/haircut"  element={<Haircut/>}></Route>
           <Route exact path="/threading"  element={<Threading/>}></Route>
@@ -68,8 +68,8 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route exact path="/about" element={<About />}></Route>
           <Route exact path="/services" element={<Services />}></Route>
+          <Route exact path="/loginsignup" element={<LoginSignup />}></Route>
           <Route exact path="/contact" element={<Contact />}></Route>
-          <Route exact path="/login" element={<LogIn />}></Route>
           <Route exact path="/appointment" element={<AppoinmentForm />}></Route>
           <Route exact path="/haircut" element={<Haircut />}></Route>
           <Route exact path="/threading" element={<Threading />}></Route>
@@ -99,7 +99,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<LogIn />} />
+          
 
           {/* Admin Routes */}
           <Route
