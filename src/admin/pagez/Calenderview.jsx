@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AdminSidebar from "../AdminSidebar";
 import { useNavigate } from "react-router-dom";
 import "../../styles/adminmain.css";
-import img from "../../assets/bg_2.png";
+
 import { Logout } from "@mui/icons-material";
 import Calendar from "react-calendar";
 import axios from "axios";
@@ -10,6 +10,8 @@ import axios from "axios";
 export default function Calenderview() {
   const [appointments, setAppointments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [adminName, setAdminName] = useState('');
+
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -19,6 +21,15 @@ export default function Calenderview() {
   };
 
   useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/adminview") 
+      .then((response) => {
+        setAdminName(response.data.name);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
     axios
       .get("http://127.0.0.1:8000/api/appointments")
       .then((response) => {
@@ -73,14 +84,11 @@ export default function Calenderview() {
         <div></div>
       </div>
 
-      <div className="rightside">
-        <div className="admin-image">
-          <img
-            src={img}
-            alt="Admin"
-            style={{ width: "4.5rem", height: "4.5rem" }}
-          />
+       <div className="rightside">
+        <div className="text">
+           {adminName}
         </div>
+        Welcome.!!
         <div className="motivational-sentence">
           <p>Stay motivated and keep serving your clients!</p>
         </div>

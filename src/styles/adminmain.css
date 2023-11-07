@@ -138,3 +138,8 @@ thead {
 .space {
   margin-right: 10px; 
 }
+.text{
+  padding-top: 30px;
+  font-size:large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

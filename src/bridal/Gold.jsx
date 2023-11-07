@@ -1,40 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../styles/Bridal.css"; // Create a new CSS file for Bronze page if needed
 
 const Gold = () => {
+  const [services, setServices] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/servicesview")
+      .then((response) => {
+        setServices(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setIsLoading(false);
+      });
+  }, []);
+
+  const goldServices = services.filter((service) => {
+    const secondWord = service.serviceType.split(' ')[1];
+    return secondWord === 'Gold';
+  });
   return (
     <div className="bridal-container">
       <h1>Gold Package</h1>
       <div className="bridal-items">
-        <div className="bridal-item">
-          <h2>Bridal Makeup - Manavari & Koori</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Jewel Set - 2</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Net - 2</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Facial-1</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Mehendi</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Natural Head Dress</h2>
-          <p></p>
-        </div>
-        <div className="bridal-item">
-          <h2>Natural Bouquet</h2>
-          <p></p>
-        </div>
-        
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>Error: {error.message}</div>
+        ) : (
+          <div>
+            
+              {goldServices.map((service) => (
+                <div className="bridal-item" key={service.id}>
+                  {service.serviceName}
+                </div>
+              ))}
+           
+          </div>
+        )}
       </div>
     </div>
   );

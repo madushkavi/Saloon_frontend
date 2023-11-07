@@ -7,13 +7,14 @@ import { Bar } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
 
 import "../styles/adminmain.css";
-import img from "../assets/bg_2.png";
+
 
 export default function Adminmain() {
   const navigate = useNavigate();
   const [monthlyData, setMonthlyData] = useState([]);
   const [monthlyLabels, setMonthlyLabels] = useState([]);
   const [monthlyAppointments, setMonthlyAppointments] = useState(0);
+  const [adminName, setAdminName] = useState('');
 
   const handleLogout = () => {
     navigate("/login");
@@ -21,6 +22,15 @@ export default function Adminmain() {
   };
 
   useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/adminview") 
+      .then((response) => {
+        setAdminName(response.data.name);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
     axios
       .get("http://127.0.0.1:8000/api/appointments")
       .then((response) => {
@@ -101,13 +111,10 @@ export default function Adminmain() {
       </div>
 
       <div className="rightside">
-        <div className="admin-image">
-          <img
-            src={img}
-            alt="Admin"
-            style={{ width: "4.5rem", height: "4.5rem" }}
-          />
+        <div className="text">
+           {adminName}
         </div>
+        Welcome.!!
         <div className="motivational-sentence">
           <p>Stay motivated and keep serving your clients!</p>
         </div>

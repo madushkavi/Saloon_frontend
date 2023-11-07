@@ -11,6 +11,7 @@ const AppointmentForm = () => {
   });
 
   const handleChange = (e) => {
+    alert("Successfully submited");
     const { name, value } = e.target;
     setFormData({
       ...formData,
