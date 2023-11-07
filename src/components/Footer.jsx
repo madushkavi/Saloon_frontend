@@ -37,7 +37,7 @@ function Footer() {
           <PinDropIcon /> 7/1/D,Indiparape,Mirigama.
         </div>
         <div className="info">
-          <PhoneIcon /> +752337142
+          <PhoneIcon /> +763624542
         </div>
         <div className="info">
           <MailIcon /> jayaniudara1998wa22@gmail.com
