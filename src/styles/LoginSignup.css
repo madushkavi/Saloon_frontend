@@ -1,0 +1,166 @@
+/* Your existing CSS styles for the login and registration form */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 300px;
+    width: 600px;
+    background: #fff;
+    padding-bottom: 220px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Additional styles for the text, underline, and other elements */
+
+.text {
+    color: #3c009d;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.underline {
+    width: 61px;
+    height: 6px;
+    background: #3c009d;
+    border-radius: 9px;
+}
+
+.inputs {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Additional styles for input elements */
+
+.input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height: 60px;
+    background: #eaeaea;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* Additional styles for icons within input elements */
+
+.input img {
+    margin: 0px 30px;
+}
+
+.inp {
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 19px;
+}
+
+/* Add styles for error messages in boxes */
+.error-box {
+    background: #ffcccc; /* Red background for error message box */
+    border: 1px solid #ff0000; /* Red border for error message box */
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px; /* Minimized font size for error messages */
+    color: #ff0000; /* Text color for error messages */
+}
+
+/* Update existing styles for the 'Forgot Password?' text and span */
+.forgot-password {
+    padding-left: 62px;
+    align-items: end;
+    margin-top: 27px;
+    color: #797979;
+    font-size: 18px;
+    display: inline-block; /* Ensure the text and span are inline elements */
+}
+
+.forgot-password span {
+    color: #4c00b4;
+    cursor: pointer;
+    display: inline; /* Display the span as an inline element */
+}
+
+/* Additional styles for the submit buttons and grayed-out state */
+
+.submit-container {
+    display: flex;
+    gap: 30px;
+    margin: 60px auto;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #fff;
+    background: #4c00b4;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gray {
+    background: #EAEAEA;
+    color: #676767;
+}
+
+
+
+/* Modify styles for the radio buttons */
+.app-check {
+    margin: 0;
+    transform: scale(0.8); /* Adjust the scale for smaller size */
+}
+
+/* Adjust styles for the gender label */
+.sex {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-left: 10px; /* Add margin to position it to the right of the radio buttons */
+    font-size: 19px; /* Minimize font size for the label */
+}
+
+
+.radioinp {
+    margin-left: -60px;
+}
+
+.wid {
+    width: 100px;
+}
+
+/* Center the "Already registered? Sign In" text */
+.already-registered {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+    margin-top: 20px; /* Add margin to separate it from the login form */
+    font-size: 18px; /* Adjust font size as needed */
+    color: #4c00b4; /* Set the desired text color */
+    cursor: pointer;
+}
+
+.already-registered span {
+    text-decoration: underline; /* Add underline to the "Sign Up" link */
+    cursor: pointer;
+}
